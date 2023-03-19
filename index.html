@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html manifest="demo.appcache">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="Keywords" content="来自昨日的人间,匿名聊天室,纸片君,uwuland,xchat,hackchat,ee,paperee,uwu">
+    <meta name="Description" content="uwuland">
+    <link rel="shortcut icon" href="https://paperee.guru/fish.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>UWULAND｜PAPEREE</title>
+</head>
+<body oncontextmenu="window.event.returnValue=false" onselectstart="return false" onpaste="return false">
+    <div id="big-screen">
+        <div id="window" class="transitions">
+            <div id="window-header">
+                <h1>uwuland - PAPEREE</h1>
+                <p><span id="hide" onclick="changeState('window',true)">⊖</span><span id="kick" onclick="shake()">⊗</span></p>
+            </div>
+            <div id="home" class="uwu">
+                <h1>『UWULAND』</h1>
+                <p onclick="changeState('home',true),main()">Start</p>
+                <p onclick="fileSaveLoad(false)">Load</p>
+                <p onclick="changeState('setting')">Set</p>
+                <p onclick="changeState('about')">About</p>
+                <div id="copyright"><span>©2023 MrZhang365 PAPEREE</span></div>
+            </div>
+            <div id="about" class="uwu">
+                <div id="about-game">
+                    <h1>From <u>PAPEREE</u> For You</h1>
+                    <p><u>You</u>: 这是什么网站？<br><u>ee</u>: 一个小小的文字剧情游戏，剧本和UI是我做的。<br>最核心的脚本还得感谢MrZhang365的zhang-game。你可以按左下角查看更多。</p>
+                    <p><u>You</u>: 其他相似游戏？<br><u>ee</u>: 关于文字游戏，我以前做过《鱼的报复计划》和《麻鸡的拯救计划》。<br>另外，还有4n0n4me和Maggie的《XC模拟器》、zzChumo的《ee的奇妙冒险》、MrZhang365的《MrZhang365的奇遇》。</p>
+                    <p><u>You</u>: 如何游玩游戏？<br><u>ee</u>: Start开始游戏，Save存档，Load读档，Set设置，About关于游戏，Home回到主页。另外，在游戏窗口外还有许多可点击的地方。</p>
+                </div>
+                <div class="arrow">
+                    <p><span onclick="changeState('about',true)">❮</span></p>
+                </div>
+            </div>
+            <div id="title" class="uwu"><h1></h1><p>- eebot And FoolishBird's Travel-</p></div>
+            <div id="setting" class="uwu">
+                <div id="range">
+                    <p><span>文字速度</span><span id="interval-num">60</span></p>
+                    <input type="range" id="interval-range" class="range" min="0" max="120" value="60" step="1" oninput="changeInterval()">
+                    <p><span>固定窗口</span><input id="dock-window" type="checkbox"><label for="dock-window"></label><span>开启音效</span><input id="turn-sound" type="checkbox" checked><label for="turn-sound"></label><span>自动存档</span><input id="turn-auto" type="checkbox" checked><label for="turn-auto"></label></p>
+                    <p id="ee-bb">别问为什么是Set不是Setting<br>因为Setting太长了 强迫症很难受（被打</p>
+                </div>
+                <div class="arrow">
+                    <p><span onclick="changeState('setting',true)">❮</span></p>
+                </div>
+            </div>
+            <div id="file-page" class="uwu">
+                <div class="arrow">
+                    <p><span onclick="changeState('file-page',true)">❮</span></p>
+                </div>
+                <div id="file-list">
+                    <div class="box" id="auto">
+                        <h1>Auto Data</h1>
+                        <div id="auto-save"></div>
+                    </div>
+                    <div class="box" id="manual">
+                        <h1>Manual Data</h1>
+                        <div id="manual-save"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="msg-box" class="uwu">
+                <div id="head"></div>
+                <div id="main-content" class="content"></div>
+                <div class="tool">
+                    <p><span onclick="changeState('home')">Home</span><span onclick="fileSaveLoad(true)">Save</span><span onclick="fileSaveLoad(false)">Load</span><span onclick="changeState('setting')">Set</span><span onclick="changeState('about')">About</span></p>
+                </div>
+            </div>
+        </div>
+        <div id="state">
+            <div id="close" onclick="changeState('state',true)"><p>×</p></div>
+            <h1>paperee's <u>zhang-game</u></h1>
+            <p><u>JS</u>: MrZhang365<u></br>New UI</u>: PAPEREE</p>
+            <p><u>Update</u>: 2023.03.12~2023.03.19</br><u>Version</u>: uwu.1.20</p>
+            <p><u>GitHub</u>:</br>New: <a href="https://github.com/paperee/uwuland" target="_blank">https://github.com/paperee/uwuland</a></br>Old: <a href="https://github.com/MrZhang365/zhang-game" target="_blank">https://github.com/MrZhang365/zhang-game</a></p>
+        </div>
+        <div id="bottom">
+            <div id="time"><p>1919.08.10 11:45:14</p></div>
+            <div id="thumbnail" onclick="changeState('window')"><p>uwuland - PAPEREE</p></div>
+            <div id="menu" onclick="changeState('state')"><p>☰</p></div>
+        </div>
+        <div id="back"><p>uwu</p></div>
+    </div>
+    <div id="small-screen">
+        <p>Error: 你的屏幕太小了 uwu</p>
+    </div>
+    <script src="drama-init.js"></script>
+    <script src="zhang-game.js"></script>
+    <script src="ee-main.js"></script>
+</body>
