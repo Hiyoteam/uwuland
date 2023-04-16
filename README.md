@@ -9,11 +9,9 @@
 
 ## 游戏说明
 使用`zhang-game`做的文字游戏  
-打开来玩玩 就知道做的是什么了-  
-当然 如果你不介意的话  
-可以作为框架套你自己的游戏  
-只需修改`drama-init.js`中`window.drama`的内容  
-另外 请保留原作者`MrZhang365`和`PAPEREE`的信息
+如果不介意的话 可以作为框架套其他文字游戏  
+修改`drama-init.js`中`window.drama`的内容  
+不过 请保留原作者`MrZhang365`和`PAPEREE`的信息
 
 
 ## 更新记录
